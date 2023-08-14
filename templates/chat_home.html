@@ -1,0 +1,20 @@
+{% extends 'chat_base.html' %} {% block content %}
+
+<form method="post" class="buttons" style="margin-top: 17%;">
+    <div class="profile">
+        <img src="{{ url_for('views.get_image', filename='database/accounts/' + name + '/' + name + '.png') }}" alt="Profile image" style="max-width: 100px; max-height: 100px;">
+        <div class="username">{{username}}</div>
+    </div>
+    <h3>Enter The Chat Room</h3>
+    <div class="join">
+        <input style="margin-right: 5px; margin-top: 14px; border-color: transparent;" type="text" placeholder="Room Code" name="code" value="{{code}}" />
+        <button type="submit" name="join" style="background-color: rgb(77, 155, 75); border-color: transparent;">Join a Room</button>
+    </div>
+    <button type="submit" name="create" class="create-btn" style="background-color: rgb(77, 155, 75); border-color: transparent;">Create a Room</button>
+    {% if error %}
+    <ul>
+        <li>{{error}}</li>
+    </ul>
+    {% endif %}
+</form>
+{% endblock %}

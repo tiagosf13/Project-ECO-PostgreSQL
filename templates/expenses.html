@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" style="color-scheme: dark;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/extrato-bancario.ico') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/statement.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/portfolio.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}">
+    <title>ECO - Despesas</title>
+</head>
+<body style="margin-top: 2%; overflow: hidden;">
+    <div class="header-wrapper" style="flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+        <h1>Despesas</h1>
+        <p>Total de despesas: {{ expenses }}</p>
+    </div>
+    <div class="wrapper">
+        <div class="table-wrapper">
+            <div class="menu-wrapper">
+                <div class="menu-icon">
+                    <div class="menu-icon">
+                        <img src="{{ url_for('static', filename='images/icons/menu-icon.png') }}" alt="Menu Icon" class="white-icon">
+                    </div>
+                </div>
+                <div class="menu-options">
+                    <a href="/download_pdf/{{id}}">Baixar Extrato ECO</a>
+                    <a href="/download_economic_report/{{id}}">Baixar Relatório Económico</a>
+                    <a href="/expenses/{{id}}">Ver Despesas</a>
+                    <a href="/profits/{{id}}">Ver Receitas</a>
+                    <a href="/statement/{{username}}">Statement</a>
+                    <a href="/profile/{{username}}">Home</a>
+                </div>
+            </div>
+        </div>
+        <div class="graph-container">
+            <div class="table-wrapper">
+                <table class="portfolio-table">
+                    <thead>
+                        <tr>
+                            <th>Despesa</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for key, value in expenses_dic.items() %}
+                        <tr>
+                            <td>{{ key }}</td>
+                            <td>{{ value }} €</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="graph-wrapper">
+                <img src="{{ url_for('views.get_image', filename='database/accounts/' + id + '/' + 'analysis' + '/' + 'expenses.png') }}" style="margin-right: 10%;">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{url_for('static', filename='statement.js')}}"></script>
+</body>
+</html>

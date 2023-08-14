@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" style="color-scheme: dark;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/carteira.ico') }}"/>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/portfolio.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+    <title>ECO - Profile of {{name}}</title>
+</head>
+    <body style="margin-top: 0%;">
+        <nav>
+            <div class="navbar">
+                <div class="container nav-container">
+                        <input class="checkbox" type="checkbox" name="" id="" />
+                        <div class="hamburger-lines">
+                            <span class="line line1"></span>
+                            <span class="line line2"></span>
+                            <span class="line line3"></span>
+                        </div>
+                    <div class="name">
+                        <h1>Portfolio</h1>
+                    </div>
+                    <div class="logo">
+                        <h2>ECO</h2>
+                    </div>
+                    <div class="menu-items">
+                        <div class="container-profile-image">
+                            <div class="profile">
+                                <div class="profile-img">
+                                    <img src="{{ url_for('views.get_image', filename='database/accounts/' + id + '/' + id + '.png') }}" alt="profile" onclick="redirectToNewPage('{{name}}')">
+                                </div>
+                                <div class="profile-name">
+                                <h2>{{name}}</h2>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="menu-list">
+                            <ul>
+                                <li><a id="deposit-button">Deposit</a></li>
+                                <li><a id="withdrawl-button">Withdrawl</a></li>
+                                <li><a id="loan-button">Loan</a></li>
+                                <li><a href="/statement/{{name}}">Statement</a></li>
+                                <li><a href="/logout/{{name}}" id="logout-button">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>               
+                </div>
+            </div>
+        </nav>
+
+        <div id="deposit-modal" class="modal" style="width: 600px;">
+            <div class="modal-content" style="border-radius: 10px;">
+                <span class="close">&times;</span>
+                <h2 style="color: rgb(77, 155, 75); margin-bottom: 15px; margin-left: 17px;">Deposit</h2>
+                <form id="deposit-form" method="post">
+                    <label for="coin" style="color: rgb(77, 155, 75);">Coin:</label>
+                    <br>    
+                        <input type="text" id="coin-deposit" name="coin-deposit" style="border: none;" required>
+                    <br>
+                    <label for="amount" style="color: rgb(77, 155, 75);">Amount:</label>
+                    <br>
+                        <input type="number" id="amount-deposit" name="amount-deposit" style="border: none;" required>
+                    <br>
+                    <button style="background-color: rgb(77, 155, 75); border: none;">Sumbit</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="withdrawl-modal" class="modal" style="width: 600px;">
+            <div class="modal-content" style="border-radius: 10px;">
+                <span class="close">&times;</span>
+                <h2 style="color: rgb(77, 155, 75); margin-bottom: 15px; margin-left: 17px;">Withdrawl</h2>
+                <form id="withdrawl-form" method="POST">
+                    <label for="coin" style="color: rgb(77, 155, 75);">Coin:</label>
+                    <br>
+                        <input type="text" id="coin-withdrawl" name="coin-withdrawl" style="border: none;" required>
+                    <br>
+                    <label for="amount" style="color: rgb(77, 155, 75);">Amount:</label>
+                    <br>
+                        <input type="number" id="amount-withdrawl" name="amount-withdrawl" style="border: none;" required>
+                    <br>
+                    <button style="background-color: rgb(77, 155, 75); border: none;">Sumbit</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="loan-modal" class="modal" style="width: 600px;">
+            <div class="modal-content" style="border-radius: 10px;">
+                <span class="close">&times;</span>
+                <h2 style="color: rgb(77, 155, 75); margin-bottom: 15px; margin-left: 17px;">Calendar</h2>
+                <div id="calendar"></div>
+                <div id="event-info" style="margin-top: 20px;"></div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>                        
+
+        <h2 class="info">{{name}} ({{id}})</h2>
+        
+        <table class="portfolio-table">
+            <thead>
+                <tr>
+                    <th>Coin</th>
+                    <th>Amount Owned</th>
+                    <th>Current Value</th>
+                </tr>
+            </thead>
+            <tbody id="coin-table">
+                <!-- Coins will be added dynamically using JavaScript -->
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Total Balance</th>
+                    <td colspan="2" id="total-balance"></td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="chat-icon">
+            <a class="chat-button" href="/chat_home/{{id}}" target="_blank"><img src="{{url_for('static', filename='images/chat3.png')}}" alt="Chat Icon"></a>
+        </div>
+        <script type="text/javascript" src="{{url_for('static', filename='portfolio.js')}}"></script>
+        <script type="text/javascript">loadUserData("{{id}}")</script>
+        <script type="text/javascript" src="{{url_for('static', filename='logout.js')}}"></script>
+        
+    </body>
+    <script type="text/javascript">
+        var name_ = "{{name}}";
+    </script>
+    <script type="text/javascript">
+        var id_ = "{{id}}";
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <script type="text/javascript">searchUsers()</script>
+    <script type="text/javascript">openChatWithUser({name})</script>
+    <script type="text/javascript" src="{{url_for('static', filename='portfolio.js')}}"></script>
+</html>

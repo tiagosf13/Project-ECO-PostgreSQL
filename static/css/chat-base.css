@@ -1,0 +1,227 @@
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.join {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.create-btn {
+    width: 100%;
+}
+
+
+.message-box {
+    border-color: transparent;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    background-color: #1a1b1a00;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    align-items: stretch;
+    max-width: 932px;
+}
+
+
+.messages {
+    overflow-y: scroll;
+    flex: 1;
+    width: 100%;
+    color: black;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin: 1em 0;
+    overflow-x: hidden;
+    max-width: 932px;
+    word-break: break-word;
+}
+
+.sender {
+    font-weight: bold;
+    margin-left: 1em;
+    margin-bottom: 5px;
+    align-items: flex-start; 
+    display: flex;
+    color : whitesmoke;
+    max-width: 932px;
+}
+
+.sender-current-user {
+    margin-left: 1em;
+    overflow-x: hidden;
+    max-width: 932px;
+    align-items: flex-end;
+    text-align: right;
+
+    color : whitesmoke;
+    font-weight: bold;
+}
+
+
+.messages::-webkit-scrollbar {
+    display: none;
+}
+
+
+.inputs textarea {
+    border-radius: 20px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: none;
+    width: 70%;
+    margin-right: 10px;
+    color: black;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.inputs textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.inputs button {
+    border-radius: 20px;
+    padding: 10px 20px;
+    background-color: rgb(77, 155, 75);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.inputs {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 10px;
+    height: 55px;
+    max-height: 90px;
+}
+
+
+#message {
+    flex: 1;
+}
+
+.sender-image {
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    margin-right: 7px;
+    max-width: 932px;
+}
+
+
+.sender-image-current-user {
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    margin-left: 7px;
+    max-width: 932px;
+}
+
+
+.text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-left: 1em;
+    max-width: 45%; /* limit width to 50% of parent container */
+    width: fit-content;
+    background-color: rgb(77, 155, 75); /* set background color */
+    padding: 10px; /* add some padding */
+    border-radius: 10px; /* round the corners */
+    font-size: 14px;
+    text-align: left; /* align text to the left by default */
+}
+
+.text-current-user {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-left: 1em;
+    margin-left: auto; /* add this line */
+    max-width: 50%;
+    width: fit-content;
+    background-color: rgb(77, 155, 75);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+    text-align: left;
+    max-width: 45%; /* limit width to 50% of parent container */
+}
+
+
+
+
+
+textarea {
+    resize: none;
+    font-family: Popins, sans-serif;
+}
+
+.muted {
+    font-size: 10px;
+    color: whitesmoke;
+    align-items: flex-start;
+    margin-top: 3px;
+    display: flex;
+    margin-left: 1.6em;
+    max-width: 932px;
+}
+
+.muted-current-user {
+    margin-right: 1em;
+    overflow-x: hidden;
+    max-width: 932px;
+    align-items: flex-end;
+    text-align: right;
+
+    color: whitesmoke;
+    font-size: 10px;
+    margin-top: 3px;
+}
+
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.username {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.join,
+.create-btn {
+    margin-top: 10px;
+}
+
+
+.chat {
+    margin-top: 100px;
+    overflow-y: hidden;
+}

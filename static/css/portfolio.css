@@ -1,0 +1,288 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+table {
+    border-collapse: unset;
+    margin: auto;
+}
+td, th {
+    padding: 8px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+th {
+    background-color: #1a1b1a59;
+    border-radius: 5%;
+}
+
+th {
+    color : rgb(77, 155, 75);
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+}
+
+.portfolio-table {
+    margin-top: 10px;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+}
+
+.navbar {
+    width: 100%;
+    box-shadow: 0 1px 4px rgb(255, 255, 255);
+}
+
+.nav-container {
+    display: flex;
+    align-items: start;
+    height: 62px;
+}
+
+.navbar .menu-items {
+    display: flex;
+}
+
+.navbar .nav-container li {
+    list-style: none;
+}
+
+.navbar .nav-container a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: 500;
+    font-size: 1.2rem;
+    padding: 0.7rem;
+}
+
+.navbar .nav-container a:hover{
+    font-weight: bolder;
+    font-optical-sizing: auto;
+    font-style: italic;
+}
+
+.nav-container {
+    display: block;
+    position: relative;
+    height: 60px;
+}
+
+.nav-container .checkbox {
+    position: absolute;
+    display: block;
+    height: 32px;
+    width: 32px;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    opacity: 0;
+    cursor: pointer;
+    color: white;
+}
+
+.nav-container .hamburger-lines {
+    display: block;
+    height: 26px;
+    width: 32px;
+    position: absolute;
+    top: 17px;
+    left: 20px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nav-container .hamburger-lines .line {
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+.nav-container .hamburger-lines .line1{
+    transform-origin: 0% 0%;
+    transition: transform 0.4s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line2 {
+    transition: transform 0.2s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line3 {
+    transform-origin: 0% 100%;
+    transition: transform 0.4s ease-in-out;
+}
+
+
+.navbar .menu-items {
+    padding-top: 120px;
+    box-shadow: inset 0 0 2000px rgb(77, 155, 75);
+    height: 100vh;
+    max-width: fit-content;
+    transform: translate(-150%);
+    display: flex;
+    flex-direction: column;
+    margin-left: -40px;
+    margin-right: 20px;
+    padding-left: 40px;
+    padding-right: 5px;
+    transition: transform 0.5s ease-in-out ;
+    text-align: left;
+    color: white;
+}
+
+.navbar .menu-items li {
+    margin-bottom: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+}
+
+.logo {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+h2.info {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+button, input {
+    height: 27px;
+    border-radius: 10px;
+    width: 110px;
+    text-align: center;
+}
+
+button {
+    margin-top: 15px;
+}
+
+.name {
+    position: absolute;
+    top: 5px;
+    left: 46.5%;
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+.nav-container input[type="checkbox"]:checked ~ .menu-items {
+    transform: translateX(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+    transform: rotate(45deg);
+    background-color: white;
+    
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+    transform: scaleY(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+    transform: rotate(-45deg);
+    background-color: white;
+}
+
+.nav-container input[type="checkbox"]:checked ~ .logo{
+    display: none;
+}
+
+.container-profile-image {
+    margin: 0 auto; /* adiciona margem automática nas laterais */
+    display: flex;
+    align-items: top;
+    height: 100px;
+    margin-bottom: 100px;
+    order: 1;
+}
+
+.profile-img img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    align-items: top;
+    display: flex;
+    margin: 0 auto;
+}
+
+.menu-items {
+display: flex;
+flex-direction: column;
+}
+
+.menu-list {
+order: 2;
+}
+
+#deposit-modal {
+    color: #666666;
+}
+
+
+#withdrawl-modal {
+    color: #666666;
+}
+
+.flashes {
+    padding: 10px;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+}
+
+#withdrawl-form input[type="submit"] {
+    background-color: rgb(77, 155, 75);
+    border-color: rgb(77, 155, 75);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+#deposit-form input[type="submit"] {
+    background-color: rgb(77, 155, 75);
+    border-color: rgb(77, 155, 75);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.chat-icon img {
+    width: 30px; /* set the width to the desired size */
+    height: auto; /* set height to auto to maintain aspect ratio */
+    margin-top: 10px;
+}
+
+
+.chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1;
+}
+
+.chat-button img {
+    width: 50px;
+    margin-right: 10px;
+}

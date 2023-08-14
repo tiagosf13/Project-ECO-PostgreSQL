@@ -1,0 +1,173 @@
+#file-label {
+    font-size: 1.2em;
+}
+#file-icon {
+    max-width: 50px;
+    max-height: 50px;
+}
+#preview {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 7%;
+    margin-bottom: 7%;
+}
+
+.header-wrapper {
+    flex-basis: 20%;
+}
+
+.header-wrapper svg {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    width: 25px;
+    height: 25px;
+}
+
+.header-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.header-wrapper div:first-child {
+    margin-right: 10px;
+}
+
+.header-wrapper div:last-child {
+    text-align: center;
+    width: 100%;
+}
+
+.table-wrapper {
+    flex-basis: 50%;
+}
+
+.graph-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.graph-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.graph-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.graph-container canvas {
+    margin: 10px;
+    max-width: 600px; /* Adjust the value as needed */
+    max-height: 400px; /* Adjust the value as needed */
+    border-radius: 10%;
+}
+
+.file-input {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+    background-color: #f9f9f9;
+}
+
+.file-input:hover {
+border-color: #aaa;
+}
+
+.file-input:focus {
+outline: none;
+border-color: #555;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    cursor: pointer;
+    background: rgb(77, 155, 75);
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
+    margin-top: 5px;
+    font-size: 9px;
+}
+
+canvas {
+    max-width: 800px;
+    max-height: 700px;
+}
+
+
+.menu-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    z-index: 9999;
+}
+
+.menu-icon {
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    position: relative; /* Change 'absolute' to 'relative' */
+    width: 85px; /* Set the width to accommodate the SVG image */
+    height: 85px; /* Set the height to accommodate the SVG image */
+}
+
+.menu-icon img {
+    width: 100%; /* Make the SVG image fill the menu icon */
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.menu-options {
+    display: none;
+    flex-direction: column;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    bottom: 60px; /* Adjust the value as needed */
+    right: 0;
+    width: 200px;
+}
+
+.menu-wrapper:hover .menu-options {
+    display: flex;
+}
+
+
+.menu-options a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.menu-options a:hover {
+    background-color: #ddd;
+}
+
+.white-icon {
+    filter: invert(1);
+}

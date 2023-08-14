@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" style="color-scheme: dark;">
+    <head>
+        <meta charset="UTF-8" />
+        <title>ECO - Chat App</title>
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/bate-papo.ico') }}"/>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/chat-base.css')}}"/>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/portfolio.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}">
+        <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+        integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+        crossorigin="anonymous"
+        ></script>
+    </head>
+    <body style=" text-align: center; margin-top: 0;">
+        <div class="content">{% block content %} {% endblock %}</div>
+    </body>
+</html>

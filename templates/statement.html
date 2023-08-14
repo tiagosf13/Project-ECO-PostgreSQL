@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" style="color-scheme: dark;">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/extrato-bancario.ico') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/statement.css') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/portfolio.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/home.css')}}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>ECO - Extrato</title>
+</head>
+<body style="margin-top: 2%;">
+    <div class="header-wrapper">
+        <div style="max-width: 50%; width: 430px;">
+            <a href="/profile/{{username}}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16" style="color: rgb(77, 155, 75); margin-top: 5px;">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
+                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+                </svg>
+            </a>
+        </div>
+        <div style="max-width: 50%; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+            <h1>Extrato</h1>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="table-wrapper">
+            <div class="menu-wrapper">
+                <div class="menu-icon">
+                    <div class="menu-icon">
+                        <img src="{{ url_for('static', filename='images/icons/menu-icon.png') }}" alt="Menu Icon" class="white-icon">
+                    </div>                                        
+                </div>
+                <div class="menu-options">
+                    <a onclick="openPopup()">Upload</a>
+                    <a href="/download_pdf/{{id}}">Baixar Extrato ECO</a>
+                    <a href="/download_economic_report/{{id}}">Baixar Relatório Económico</a>
+                    <a href="/expenses/{{id}}">Ver Despesas</a>
+                    <a href="/profits/{{id}}">Ver Receitas</a>
+                </div>
+            </div>
+        </div>
+        <div class="graph-container">
+            <div class="graph-wrapper">
+                <img src="{{ url_for('views.get_image', filename='database/accounts/' + id + '/' + 'analysis' + '/' + 'statement.png') }}">
+            </div>
+            <canvas id="grafico-saldo"></canvas>
+        </div>
+    </div>
+    <script>
+        var id = "{{id}}";
+    </script>
+    <script type="text/javascript" src="{{url_for('static', filename='statement.js')}}"></script>
+</body>
+</html>
