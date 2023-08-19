@@ -140,6 +140,23 @@ def search_user_by_email(email):
 
     # Return the user data
     return result[0][1]
+    
+
+def search_password_by_username(username):
+    
+    # Construct the SQL query
+    query = "SELECT password FROM users WHERE username = %s"
+    
+    # Execute the query and get the result
+    result = db_query(query, (username,))
+
+    # If no user is found, return None
+    if not result:
+
+        return None
+
+    # Return the user data
+    return result[0][0]
 
 
 def search_user_by_username(username):
@@ -195,8 +212,8 @@ def send_recovery_password(email):
     else:
 
         # Extract the username and password from the user
-        name = user["username"]
-        password = user["password"]
+        name = user
+        password = search_password_by_username(user)
 
         # Build the HTML body
         HTMLBody = f"""
@@ -225,7 +242,7 @@ def send_recovery_password(email):
         """
 
         # Send the recovery email to the user
-        send_email(user["email"], "Recover your password", HTMLBody)
+        send_email(email, "Recover your password", HTMLBody)
 
         # Return True to indicate the email was sent successfully
         return True
@@ -844,8 +861,6 @@ def calculate_bank_expenses(lst):
                 dic[lst[i][1]] = expense
             else:
                 dic[lst[i][1]] += expense
-    #print(round(expenses, 2))
-    #print(dic)
     return round(expenses, 2), dic
 
 
@@ -1122,6 +1137,7 @@ def get_pizza_info(dic, id, page):
 
     # Clear the plot to free up memory
     plt.clf()
+    plt.close()
 
     return filepath
 

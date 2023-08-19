@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\handlers"
   ],
-  "SelectedNode": "\\LICENSE",
+  "SelectedNode": "\\views.py",
   "PreviewInSolutionExplorer": false
 }

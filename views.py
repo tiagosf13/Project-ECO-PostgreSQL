@@ -1,6 +1,6 @@
 from time import localtime, strftime
 import time
-from flask import Blueprint, render_template, request, jsonify, redirect, url_for, session, send_file
+from flask import Blueprint, render_template, request, jsonify, redirect, url_for, session, send_file, send_from_directory
 from handlers.processing_handlers import *
 from handlers.activity_handler import *
 from handlers.financial_module import *
@@ -260,7 +260,6 @@ def login():
             else:
 
                 # Sent the 2FA login code to the user's email
-                print(code)
                 send_two_factor_auth_code(username, code, "login")
 
             # Return the 2FA login page
@@ -319,12 +318,9 @@ def recover_password():
             return redirect(url_for("views.signup"))
 
         else:
-
-            # If the user exists, verify if the email inserted is the same as the one in the database
-            if user["email"] == email:
-
-                # Send recovery password to the user's email
-                send_recovery_password(email)
+            
+            # Send recovery password to the user's email
+            send_recovery_password(email)
 
             # Return the login page
             return redirect(url_for("views.login"))
@@ -690,10 +686,12 @@ def account_image(id, image):
 
 # This view is used to get a image
 @views.route('/get_image/<path:filename>')
-def get_image(filename):
+def get_image(filename, cache_timeout=0):
 
     # Send the image
-    return send_file(filename, mimetype='image/png')
+    path = "/".join(filename.split("/")[:-1])
+    filename = filename.split("/")[-1]
+    return send_from_directory(path, filename, cache_timeout=0)
 
 
 # This view is used to update the user's account
