@@ -6,19 +6,6 @@ Welcome to the Project ECO repository! Visit us [here](http://www.financialtipec
 
 This repository contains the entire Project ECO. It is part of the larger initiative by the organization [Projeto-ECO](https://github.com/orgs/Projeto-ECO) to develop innovative solutions for environmental conservation and sustainability.
 
-## Project Members
-
-**AS - Grupo 105**
-
-The development of this project was led by the following team members:
-
-- Filipe Sousa (76639)
-- Hugo Xavier (108180)
-- Lucas Matos (93245)
-- Tiago Fonseca (107266)
-
-Each member contributed their expertise and dedication to bring this project to fruition.
-
 ## Repository
 
 To access the full project, including all its resources and code, please visit the following link:
