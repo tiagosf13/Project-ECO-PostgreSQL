@@ -59,7 +59,6 @@ def register_operation(id, operation, coin, amount, data):
 
     # Get the current account balance
     accountBalance = get_account_balance(data)
-    print(accountBalance)
 
     try:
         # Check if the statement file exists and create it if necessary

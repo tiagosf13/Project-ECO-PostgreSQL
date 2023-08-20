@@ -53,7 +53,7 @@
                 </table>
             </div>
             <div class="graph-wrapper">
-                <img src="{{ url_for('views.get_image', filename='database/accounts/' + id + '/' + 'analysis' + '/' + 'profits.png') }}" style="margin-right: 10%;">
+                <img src="{{ url_for('views.get_image', filename='database/accounts/' + id + '/' + 'analysis' + '/' + 'profits.png') }}?v={{ timestamp }}" style="margin-right: 10%;">
             </div>
         </div>
     </div>

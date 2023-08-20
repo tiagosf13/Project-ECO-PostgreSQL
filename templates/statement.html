@@ -44,7 +44,7 @@
         </div>
         <div class="graph-container">
             <div class="graph-wrapper">
-                <img src="{{ url_for('views.get_image', filename='database/accounts/' + id + '/' + 'analysis' + '/' + 'statement.png') }}">
+                <img src="{{ url_for('views.get_image', filename='database/accounts/' + id + '/' + 'analysis' + '/' + 'statement.png') }}?v={{ timestamp }}">
             </div>
             <canvas id="grafico-saldo"></canvas>
         </div>
