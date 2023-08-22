@@ -1,23 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-<<<<<<< Updated upstream
-    "\\handlers"
-  ],
-  "SelectedNode": "\\views.py",
-=======
-<<<<<<< HEAD
-    "\\database",
-    "\\database\\accounts",
-    "\\handlers",
     "\\templates"
   ],
-  "SelectedNode": "\\handlers\\processing_handlers.py",
-=======
-    "\\handlers"
-  ],
   "SelectedNode": "\\views.py",
->>>>>>> b4319d8f04ffb13712995e5686c6057a1bf7cac6
->>>>>>> Stashed changes
   "PreviewInSolutionExplorer": false
 }

@@ -149,6 +149,9 @@ def two_factor_auth_login(username):
 
     # Get the 2FA code that was set in the login session
     code = session.get("code")
+
+    if code is None:
+        return redirect(url_for("views.login"))
     
     # Fetch the user's data from the database using username
     user_data = db_query("SELECT id, active FROM users WHERE username = %s", (username,))
@@ -197,6 +200,9 @@ def two_factor_auth_signup():
     password = session.get("password_signup")
     username = session.get("username_signup")
     email = session.get("email_signup")
+
+    if code is None:
+        return redirect(url_for("views.login"))
 
     # Check if the requested method is POST
     if request.method == "POST":
